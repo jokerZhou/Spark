@@ -21,6 +21,7 @@ func init() {
 	golog.SetTimeFormat(`2006/01/02 15:04:05`)
 
 	if len(strings.Trim(config.CfgBuffer, "\x19")) == 0 {
+		print("结束")
 		os.Exit(0)
 		return
 	}

@@ -99,6 +99,9 @@ func generateClient(ctx *gin.Context) {
 		UUID:   hex.EncodeToString(clientUUID),
 		Key:    hex.EncodeToString(clientKey),
 	})
+	hex_string_data := hex.EncodeToString(cfgBytes)
+	// byte 转 16进制 的结果
+	println(hex_string_data)
 	if err != nil {
 		if err == errTooLargeEntity {
 			ctx.AbortWithStatusJSON(http.StatusRequestEntityTooLarge, modules.Packet{Code: 1, Msg: `${i18n|tooLargeConfig}`})
